@@ -23,7 +23,7 @@ class PrerenderClient extends GoutteClient
     {
         $this->prerenderUrl = $prerenderUrl;
 
-        parent::__construct($server, $history, $cookieJar);
+        parent::__construct(null, $history, $cookieJar);
     }
 
     /**

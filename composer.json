@@ -25,24 +25,36 @@
     }
   ],
   "require": {
-    "php": "^5.5|^7.0",
-    "symfony/dom-crawler": "^2.8|^3.0|^4.0",
-    "fabpot/goutte": "^3.0",
+    "php": "^7.4|^8.0",
+    "fabpot/goutte": ">= 4.0",
     "league/uri": "^4.2",
-    "psr/log": "^1.0"
+    "psr/log": "^1.0 | ^2.0 ",
+    "symfony/dom-crawler": ">= 4.4",
+    "symfony/http-client": "^5.4"
   },
   "require-dev": {
     "codeclimate/php-test-reporter": "dev-master@dev",
-    "phpunit/phpunit": "^4.8",
     "mockery/mockery": "^0.9.4",
-    "monolog/monolog": "^1.21"
+    "monolog/monolog": "^1.21",
+    "phpstan/phpstan": "^1.8",
+    "phpunit/phpunit": "^4.8",
+    "rector/rector": "^0.13.8"
   },
   "autoload": {
     "psr-4": {
       "MediaMonks\\Crawler\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\MediaMonks\\": "tests/"
+    }
+  },
+
   "extra": {
+    "symfony": {
+      "require": "4.4"
+    },
     "branch-alias": {
       "dev-master": "1.0-dev"
     }

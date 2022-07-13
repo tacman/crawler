@@ -29,13 +29,19 @@ interface CrawlerClientInterface
      *
      * @return Crawler
      */
-    public function request(
-        $method,
-        $uri,
-        array $parameters = [],
-        array $files = [],
-        array $server = [],
-        $content = null,
-        $changeHistory = true
-    );
+    public function request(string $method, string $uri, array $parameters = [], array $files = [], array $server = [], string $content = null, bool $changeHistory = true);
+//
+//    public function request(
+//        $method,
+//        $uri,
+//        array $parameters = [],
+//        array $files = [],
+//        array $server = [],
+//        $content = null,
+//        $changeHistory = true
+//    );
 }
+
+
+//PHP Fatal error:  Declaration of Symfony\Component\BrowserKit\AbstractBrowser::request(string $method, string $uri, array $parameters = Array, array $files = Array, array $server = Array, ?string $content = NULL, bool $changeHistory = true) must be compatible with MediaMonks\Crawler\Client\CrawlerClientInterface::request($method, $uri, array $parameters = Array, array $files = Array, array $server = Array, $content = NULL, $changeHistory = true) in /home/tac/survos/projects/crawler/src/Client/GoutteClient.php on line 355
+//tac@pop-os:~/survos/projects/crawler$
