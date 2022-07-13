@@ -22,60 +22,36 @@ class Crawler implements LoggerAwareInterface
      */
     private $client;
 
-    /**
-     * @var int
-     */
-    private $limit = 0;
+    private int $limit = 0;
 
-    /**
-     * @var bool
-     */
-    private $stopOnError = false;
+    private bool $stopOnError = false;
 
-    /**
-     * @var bool
-     */
-    private $exceptionOnError = false;
+    private bool $exceptionOnError = false;
 
     /**
      * @var UrlMatcherInterface[]
      */
-    private $whitelistUrlMatchers = [];
+    private array $whitelistUrlMatchers = [];
 
     /**
      * @var UrlMatcherInterface[]
      */
-    private $blacklistUrlMatchers = [];
+    private array $blacklistUrlMatchers = [];
 
     /**
      * @var UrlNormalizerInterface[]
      */
-    private $urlNormalizers = [];
+    private array $urlNormalizers = [];
 
-    /**
-     * @var Url
-     */
-    private $baseUrl;
+    private ?\MediaMonks\Crawler\Url $baseUrl = null;
 
-    /**
-     * @var UrlCollection
-     */
-    private $urlsCrawled;
+    private \MediaMonks\Crawler\Url\UrlCollection $urlsCrawled;
 
-    /**
-     * @var UrlCollection
-     */
-    private $urlsQueued;
+    private \MediaMonks\Crawler\Url\UrlCollection $urlsQueued;
 
-    /**
-     * @var UrlCollection
-     */
-    private $urlsReturned;
+    private \MediaMonks\Crawler\Url\UrlCollection $urlsReturned;
 
-    /**
-     * @var array
-     */
-    private $urlsRejected = [];
+    private array $urlsRejected = [];
 
     /**
      * @var LoggerInterface
@@ -600,9 +576,7 @@ class Crawler implements LoggerAwareInterface
     protected function extractUrlsFromCrawler(DomCrawler $crawler)
     {
         return $crawler->filter('a')->each(
-            function (DomCrawler $node) {
-                return $node->link()->getUri();
-            }
+            fn(DomCrawler $node) => $node->link()->getUri()
         );
     }
 

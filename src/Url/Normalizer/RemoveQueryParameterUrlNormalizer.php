@@ -6,10 +6,7 @@ use MediaMonks\Crawler\Url;
 
 class RemoveQueryParameterUrlNormalizer implements UrlNormalizerInterface
 {
-    /**
-     * @var array
-     */
-    private $keys;
+    private array $keys;
 
     /**
      * @param array $keys

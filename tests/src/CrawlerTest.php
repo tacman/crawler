@@ -17,7 +17,7 @@ use Symfony\Component\HttpClient\HttpClient as Client;
 use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 
-class CrawlerTest extends \PHPUnit_Framework_TestCase
+class CrawlerTest extends \PHPUnit\Framework\TestCase
 {
     public function test_default_values()
     {
@@ -227,7 +227,7 @@ class CrawlerTest extends \PHPUnit_Framework_TestCase
 
     public function test_crawler_exception_on_error()
     {
-        $this->setExpectedException(RequestException::class);
+        $this->expectException(RequestException::class);
         $client = $this->getClient();
 
         $i = 0;
@@ -366,7 +366,7 @@ class CrawlerTest extends \PHPUnit_Framework_TestCase
 
     public function test_add_rejected_url_invalid()
     {
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $addRejectedUrl = get_non_public_method(Crawler::class, 'addRejectedUrl');
 
@@ -392,7 +392,7 @@ class CrawlerTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 

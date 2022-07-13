@@ -6,7 +6,7 @@ use MediaMonks\Crawler\Url;
 use MediaMonks\Crawler\Url\Normalizer\CallbackUrlNormalizer;
 use Mockery as m;
 
-class CallbackUrlNormalizerTest extends \PHPUnit_Framework_TestCase
+class CallbackUrlNormalizerTest extends \PHPUnit\Framework\TestCase
 {
     public function test_callback_is_called()
     {
@@ -21,7 +21,7 @@ class CallbackUrlNormalizerTest extends \PHPUnit_Framework_TestCase
         $callbackUrlMatcher->normalize($url);
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 

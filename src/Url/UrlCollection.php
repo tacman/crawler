@@ -11,7 +11,7 @@ class UrlCollection implements \Countable
     /**
      * @var Url[]
      */
-    private $urls = [];
+    private array $urls = [];
 
     /**
      * @param Url $url

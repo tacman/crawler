@@ -6,7 +6,7 @@ use MediaMonks\Crawler\Url;
 use MediaMonks\Crawler\Url\Matcher\CallbackUrlMatcher;
 use Mockery as m;
 
-class CallbackUrlMatcherTest extends \PHPUnit_Framework_TestCase
+class CallbackUrlMatcherTest extends \PHPUnit\Framework\TestCase
 {
     public function test_callback_is_called()
     {
@@ -21,7 +21,7 @@ class CallbackUrlMatcherTest extends \PHPUnit_Framework_TestCase
         $callbackUrlMatcher->matches($url);
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 

@@ -6,7 +6,7 @@ use MediaMonks\Crawler\Url;
 use MediaMonks\Crawler\Url\Normalizer\RemoveQueryParameterUrlNormalizer;
 use Mockery as m;
 
-class RemoveQueryParameterUrlNormalizerTest extends \PHPUnit_Framework_TestCase
+class RemoveQueryParameterUrlNormalizerTest extends \PHPUnit\Framework\TestCase
 {
     public function test_query_parameter_is_removed()
     {

@@ -29,15 +29,15 @@
     "fabpot/goutte": ">= 4.0",
     "league/uri": "^4.2",
     "psr/log": "^1.0 | ^2.0 ",
-    "symfony/dom-crawler": ">= 4.4",
-    "symfony/http-client": "^5.4"
+    "symfony/dom-crawler": ">= 5.4",
+    "symfony/http-client": ">= 5.4"
   },
   "require-dev": {
     "codeclimate/php-test-reporter": "dev-master@dev",
     "mockery/mockery": "^0.9.4",
     "monolog/monolog": "^1.21",
     "phpstan/phpstan": "^1.8",
-    "phpunit/phpunit": "^4.8",
+    "phpunit/phpunit": "^8.0",
     "rector/rector": "^0.13.8"
   },
   "autoload": {

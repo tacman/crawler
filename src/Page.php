@@ -7,20 +7,11 @@ use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 
 class Page
 {
-    /**
-     * @var Url
-     */
-    private $url;
+    private \MediaMonks\Crawler\Url $url;
 
-    /**
-     * @var DomCrawler
-     */
-    private $crawler;
+    private DomCrawler $crawler;
 
-    /**
-     * @var Response
-     */
-    private $response;
+    private ?\Symfony\Component\BrowserKit\Response $response;
 
     /**
      * @param Url $url

@@ -6,10 +6,7 @@ use League\Uri\Schemes\Http as Url;
 
 class PathRegexUrlMatcher implements UrlMatcherInterface
 {
-    /**
-     * @var string
-     */
-    private $pattern;
+    private string $pattern;
 
     /**
      * @param string $pattern
