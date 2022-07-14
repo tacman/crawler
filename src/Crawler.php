@@ -327,11 +327,9 @@ class Crawler implements LoggerAwareInterface
      * @param LoggerInterface $logger
      * @return $this
      */
-    public function setLogger(LoggerInterface $logger)
+    public function setLogger(LoggerInterface $logger): void
     {
         $this->logger = $logger;
-
-        return $this;
     }
 
     /**

@@ -28,7 +28,7 @@
     "php": "^7.4|^8.0",
     "fabpot/goutte": ">= 4.0",
     "league/uri": "^4.2",
-    "psr/log": "^1.0 | ^2.0 ",
+    "psr/log": "^1.0 | ^2.0| ^3.0 ",
     "symfony/dom-crawler": ">= 5.4",
     "symfony/http-client": ">= 5.4"
   },
