@@ -50,7 +50,7 @@ class UrlCollection implements \Countable
     /**
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->urls);
     }
@@ -64,9 +64,9 @@ class UrlCollection implements \Countable
     }
 
     /**
-     * @return array
+     * @return string[]
      */
-    public function toArray()
+    public function toArray(): array
     {
         $stringified = [];
         foreach ($this->urls as $url) {

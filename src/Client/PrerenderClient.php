@@ -30,7 +30,7 @@ class PrerenderClient extends GoutteClient
      * @param string $uri
      * @return string
      */
-    protected function getAbsoluteUri($uri)
+    protected function getAbsoluteUri($uri): string
     {
         return $this->prerenderUrl.parent::getAbsoluteUri($uri);
     }
@@ -38,7 +38,7 @@ class PrerenderClient extends GoutteClient
     /**
      * @inheritdoc
      */
-    public function getRequest()
+    public function getRequest(): object
     {
         $request = parent::getRequest();
         if (!empty($request)) {
@@ -47,6 +47,7 @@ class PrerenderClient extends GoutteClient
                 $request->getFiles(), $request->getCookies(), $request->getServer(),
                 $request->getContent());
         }
+        return $request;
     }
 
     /**

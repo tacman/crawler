@@ -461,7 +461,7 @@ class Crawler implements LoggerAwareInterface
      * @param Url $url
      * @return bool
      */
-    protected function shouldReturnUrl(Url $url)
+    protected function shouldReturnUrl(Url $url): bool
     {
         if (!empty($this->whitelistUrlMatchers)) {
             if (!$this->isUrlWhitelisted($url)) {
@@ -484,7 +484,7 @@ class Crawler implements LoggerAwareInterface
      * @param Url $url
      * @return bool
      */
-    protected function isUrlWhitelisted(Url $url)
+    protected function isUrlWhitelisted(Url $url): bool
     {
         foreach ($this->whitelistUrlMatchers as $matcher) {
             if ($matcher->matches($url)) {
@@ -499,7 +499,7 @@ class Crawler implements LoggerAwareInterface
      * @param Url $url
      * @return bool
      */
-    protected function isUrlBlacklisted(Url $url)
+    protected function isUrlBlacklisted(Url $url): bool
     {
         foreach ($this->blacklistUrlMatchers as $matcher) {
             if ($matcher->matches($url)) {
@@ -514,7 +514,7 @@ class Crawler implements LoggerAwareInterface
      * @param Url $url
      * @return bool
      */
-    protected function shouldCrawlUrl(Url $url)
+    protected function shouldCrawlUrl(Url $url): bool
     {
         if ($this->urlsCrawled->contains($url) || $this->urlsQueued->contains($url)) {
             return false;
@@ -548,7 +548,7 @@ class Crawler implements LoggerAwareInterface
      * @param Url $url
      * @return bool
      */
-    protected function isUrlPartOfBaseUrl(Url $url)
+    protected function isUrlPartOfBaseUrl(Url $url): bool
     {
         $baseUrlString = (string)$this->baseUrl;
         $this->getLogger()->debug($baseUrlString.' - '.$url);
@@ -562,7 +562,7 @@ class Crawler implements LoggerAwareInterface
     /**
      * @return bool
      */
-    protected function isLimitReached()
+    protected function isLimitReached(): bool
     {
         return (!empty($this->limit) && count($this->urlsReturned) === $this->limit);
     }
