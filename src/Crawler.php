@@ -18,7 +18,7 @@ use Psr\Log\NullLogger;
 class Crawler implements LoggerAwareInterface
 {
     /**
-     * @var Client
+     * @var CrawlerClientInterface
      */
     private $client;
 
@@ -85,7 +85,7 @@ class Crawler implements LoggerAwareInterface
     }
 
     /**
-     * @return Client
+     * @return CrawlerClientInterface
      */
     public function getClient()
     {
